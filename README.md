@@ -21,7 +21,6 @@ extern crate peeking_take_while;
 // scope.
 use peeking_take_while::PeekableExt;
 
-# fn main() {
 // Let's say we have two collections we want to iterate through: `xs` and
 // `ys`. We want to perform one operation on all the leading contiguous
 // elements that match some predicate, and a different thing with the rest of
@@ -36,7 +35,6 @@ let mut iter_ys = ys.into_iter().peekable();
 
 {
     // Let's do one thing with all the items that are less than 10.
-#   fn do_things_with<T>(_: T) {}
 
     let xs_less_than_ten = iter_xs.by_ref().take_while(|x| *x < 10);
     for x in xs_less_than_ten {
@@ -57,5 +55,4 @@ assert_eq!(iter_xs.next(), Some(11));
 
 // However, when using `peeking_take_while` we did not! Great!
 assert_eq!(iter_ys.next(), Some(10));
-# }
 ```
