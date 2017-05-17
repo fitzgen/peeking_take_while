@@ -7,7 +7,7 @@ license = "Apache-2.0/MIT"
 name = "peeking_take_while"
 readme = "./README.md"
 repository = "https://github.com/fitzgen/peeking_take_while"
-version = "0.1.1"
+version = "0.1.2"
 
 [badges]
 [badges.travis-ci]
