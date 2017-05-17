@@ -79,13 +79,7 @@ impl<'a, I, P> Iterator for PeekingTakeWhile<'a, I, P>
 
     fn next(&mut self) -> Option<Self::Item> {
         let predicate = &mut self.predicate;
-        if self.iter.peek().map_or(false, |x| {
-            println!("PeekingTakeWhile::next:");
-            println!("    x = {:?}", x);
-            let result = !(predicate)(x);
-            println!("    result = {:?}", result);
-            result
-        }) {
+        if self.iter.peek().map_or(false, |x| !(predicate)(x)) {
             None
         } else {
             self.iter.next()
